@@ -261,6 +261,8 @@ body {
 
 /* Footer in basso */
 .bottom-nav {
+    position: sticky;
+    bottom: 0;
     height: 78px;
     background-color: #2f3140;
     display: flex;
