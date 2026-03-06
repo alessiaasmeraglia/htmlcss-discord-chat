@@ -1,3 +1,22 @@
+/*Stile generale*/
+
+:root {
+  --bg-main: #181a24;
+  --bg-panel: #1f2230;
+  --bg-panel-light: #2a2e3c;
+  --bg-hover: #303544;
+  --bg-footer: #2b2d3a;
+  --bg-search: #2e3240;
+  --text-main: #ffffff;
+  --text-soft: #a6a9ba;
+  --text-muted: #8e93a8;
+  --accent: #5865f2;
+  --online: #39c06b;
+  --away: #f0b232;
+  --offline: #ed4f5f;
+  --sidebar-width: 82px;
+  --footer-height: 78px;
+}
 /*Reset iniziale*/
 * {
   margin: 0;
@@ -5,38 +24,28 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: sans-serif;
-  color: white;
-}
-
-button {
-  background: transparent;
-  border: none;
-  color: inherit;
-  font: inherit;
-  cursor: pointer;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
 img {
   display: block;
   max-width: 100%;
 }
 
-ul {
-  list-style: none;
+button,
+a {
+  font: inherit;
 }
 
+body {
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  background: #0e1018;
+  color: var(--text-main);
+}
 
 /*Contenitore generale*/
 .app {
-  height: 100vh;
   display: flex;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #1b1d29 0%, #181a24 100%);
 }
 
 /*Sidebar*/
@@ -44,6 +53,7 @@ ul {
   width: 80px;
   background-color: #11131a;
   padding: 16px 8px;
+  flex-shrink: 0;
 }
 
 .server-list {
@@ -83,71 +93,7 @@ ul {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-}
-
-/*Lista chat*/
-.chat-list {
-  flex-grow: 1;
-  background-color: #202230;
-}
-
-.chat-list {
-  flex-grow: 1;
-  background-color: #202230;
-  padding: 14px 10px;
-}
-
-.chat-card {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 10px;
-  border-radius: 16px;
-  padding: 12px 10px;
-  margin-bottom: 6px;
-}
-.chat-card.selected {
-  background-color: #2b2e3b;
-}
-
-.chat-left {
-  display: flex;
-  gap: 12px;
   min-width: 0;
-}
-
-.avatar {
-  width: 42px;
-  height: 42px;
-  background-color: #2b2e3b;
-  border-radius: 50%;
-  object-fit: cover;
-  flex-shrink: 0;
-}
-
-.chat-info {
-  min-width: 0;
-}
-
-.chat-info h3{
-  font-size: 1rem;
-  margin-bottom: 4px;
-  
-}
-
-.chat-card.selected .chat-info h3 {
-  color: white;
-}
-
-.chat-card.selected .chat-info p {        /*Aggiustare che prende solo i bianchi di p selezionato non tutti*/
-  color: white;
-}
-
-.time {
-  color: #a5acbf;
-  font-size: 0.85rem;
-  white-space: nowrap;
-  padding-top: 4px;
 }
 
 /*Header*/
@@ -179,7 +125,116 @@ ul {
   flex-grow: 1;
   height: 38px;
   background-color: #313543;
+  border-radius: 999px;
+  padding: 0 16px;
+}
+
+/*Lista chat*/
+.chat-list {
+  flex-grow: 1;
+  background-color: #202230;
+  padding: 14px 10px 20px;
+  overflow-y: auto;
+}
+
+.chat-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-list::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.18);
+  border-radius: 20px;
+}
+
+.chat-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  border-radius: 16px;
+  padding: 12px 10px;
+  margin-bottom: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.chat-card:hover {
+  background-color: #343847;
+}
+
+.chat-card.selected {
+  background-color: #2b2e3b;
+}
+
+.chat-left {
+  display: flex;
+  gap: 12px;
+  min-width: 0;
+}
+
+/* Avatar e stato */
+.avatar-wrapper {
+  position: relative;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+}
+
+.avatar {
+  width: 42px;
+  height: 42px;
+  background-color: #2b2e3b;
   border-radius: 50%;
+  object-fit: cover;
+}
+
+.status {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  bottom: -1px;
+  left: -1px;
+  border: 2px solid #202230;
+}
+
+.status.green {
+  background-color: #2ecc71;
+}
+
+.status.orange {
+  background-color: #f1c40f;
+}
+
+.status.red {
+  background-color: #ff4757;
+}
+
+/* Testi chat */
+.chat-info {
+  min-width: 0;
+}
+
+.chat-info p{
+  font-size: 1rem;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
+}
+
+/* chat selezionata */
+.chat-card.selected .chat-info h3,
+.chat-card.selected .chat-info p {
+  color: white;
+}
+
+.time {
+  color: #a5acbf;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  padding-top: 4px;
+  flex-shrink: 0;
 }
 
 /*Footer*/
@@ -189,6 +244,7 @@ ul {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .nav-item {
