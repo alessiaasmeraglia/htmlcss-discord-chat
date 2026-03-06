@@ -262,11 +262,12 @@ body {
 /* Footer in basso */
 .bottom-nav {
     height: 78px;
-    background-color: #2b2d39;
+    background-color: #2f3140;
     display: flex;
     align-items: center;
     justify-content: space-around;
     flex-shrink: 0;
+    padding: 0 8px;
 }
 
 /* Link footer */
@@ -279,13 +280,17 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 6px;
-    font-size: 13px;
+    gap: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.1;
 }
 
 /* Icone footer */
 .nav-item i {
     font-size: 20px;
+    line-height: 1;
 }
 
 /* Avatar footer */
