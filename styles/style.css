@@ -57,7 +57,7 @@ ul {
   width: 48px;
   height: 48px;
   background-color: #2b2e3b;
-  border-radius: 16px;
+  border-radius: 50px;
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.2s ease;
@@ -84,6 +84,58 @@ ul {
   display: flex;
   flex-direction: column;
 }
+
+.chat-list {
+  flex-grow: 1;
+  background-color: #202230;
+  padding: 14px 10px;
+}
+
+.chat-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  border-radius: 16px;
+  padding: 12px 10px;
+}
+
+.chat-left {
+  display: flex;
+  gap: 12px;
+  min-width: 0;
+}
+
+.avatar {
+  width: 42px;
+  height: 42px;
+  background-color: #2b2e3b;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.chat-info {
+  min-width: 0;
+}
+
+.chat-info h2{
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.chat-info p {
+  color: #a5acbf;
+  font-size: 0.8rem;
+}
+
+.time {
+  color: #a5acbf;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  padding-top: 4px;
+}
+
 /*Header*/
 .topbar {
   height: 120px;
