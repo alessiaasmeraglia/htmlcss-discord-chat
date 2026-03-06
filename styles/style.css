@@ -188,6 +188,12 @@ body {
     background-color: #242633;
 }
 
+.chat-text.active-chat h3,
+.chat-text.active-chat p {
+    color: white;
+}
+
+
 /* Parte sinistra della chat */
 .chat-left {
     display: flex;
