@@ -85,6 +85,12 @@ ul {
   flex-direction: column;
 }
 
+/*Lista chat*/
+.chat-list {
+  flex-grow: 1;
+  background-color: #202230;
+}
+
 .chat-list {
   flex-grow: 1;
   background-color: #202230;
@@ -123,14 +129,18 @@ ul {
   min-width: 0;
 }
 
-.chat-info h2{
+.chat-info h3{
   font-size: 1rem;
   margin-bottom: 4px;
+  
 }
 
-.chat-info p {
-  color: #a5acbf;
-  font-size: 0.8rem;
+.chat-card.selected .chat-info h3 {
+  color: white;
+}
+
+.chat-card.selected .chat-info p {        /*Aggiustare che prende solo i bianchi di p selezionato non tutti*/
+  color: white;
 }
 
 .time {
@@ -171,11 +181,7 @@ ul {
   background-color: #313543;
   border-radius: 50%;
 }
-/*Lista chat*/
-.chat-list {
-  flex-grow: 1;
-  background-color: #202230;
-}
+
 /*Footer*/
 .bottom-nav {
   height: 70px;
