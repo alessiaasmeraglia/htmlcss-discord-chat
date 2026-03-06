@@ -321,6 +321,13 @@ body {
   box-shadow: 0 10px 24px rgba(88, 101, 242, 0.35);
 }
 
+.nav-profile {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
 @media (max-width: 420px) {
   .topbar {
     padding-inline: 16px;
