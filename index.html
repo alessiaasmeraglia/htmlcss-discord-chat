@@ -16,26 +16,40 @@
         <!-- Sidebar -->
         <aside class="sidebar">
             <ul class="server-list">
-                <li class="server-item active">
-                    <img src="/img/logo.webp" alt="Discord">
+                <li class="server-item current">
+                <a href="#" class="server-link" aria-label="Discord Home">
+                    <img src="img/logo.webp" alt="Discord">
+                </a>
                 </li>
                 <li class="server-item">
-                    <img src="/img/server_boolean.png" alt="Boolean">
+                <a href="#" class="server-link" aria-label="Arte e Creatività">
+                    <img src="img/server arte.png" alt="Arte e Creatività">
+                </a>
                 </li>
                 <li class="server-item">
-                    <img src="/img/server arte.png" alt="Arte">
+                <a href="#" class="server-link" aria-label="Boolean">
+                    <img src="img/server_boolean.png" alt="Boolean">
+                </a>
                 </li>
                 <li class="server-item">
-                    <img src="/img/server_italia.png" alt="Italia">
+                <a href="#" class="server-link" aria-label="Italia FIGC">
+                    <img src="img/server_italia.png" alt="Italia FIGC">
+                </a>
                 </li>
                 <li class="server-item">
-                    <img src="/img/server_nintendo.png" alt="Nintendo">
+                <a href="#" class="server-link" aria-label="Nintendo Switch">
+                    <img src="img/server_nintendo.png" alt="Nintendo Switch">
+                </a>
                 </li>
                 <li class="server-item">
-                    <img src="/img/server_javascript.png" alt="JavaScript">
+                <a href="#" class="server-link" aria-label="JavaScript">
+                    <img src="img/server_javascript.png" alt="JavaScript">
+                </a>
                 </li>
                 <li class="server-item">
-                    <img src="/img/server_pokemon.png" alt="Pokemon">
+                <a href="#" class="server-link" aria-label="Pokémon">
+                    <img src="img/server_pokemon.png" alt="Pokémon">
+                </a>
                 </li>
             </ul>
         </aside>
@@ -54,170 +68,215 @@
         </header>
 
         <!-- Lista chat al centro -->
-        <main class="chat-list">
-            <div class="chat-card">
-                <div class="chat-left">
-                    <div class="avatar-wrapper">
-                        <img src="./img/profile1.webp" alt="Giuseppe Rossi" class="avatar">
-                        <span class="status red"></span>
-                    </div>
-
-                    <div class="chat-info">
-                        <h3 class="chat-name">Giuseppe Rossi</h3>
-                        <p class="last-message">Ciao, come stai?</p>
-                    </div>
-                </div>
-
-                <span class="time">2min</span>
+        <main class="main-content">
+        <header class="topbar">
+            <div class="topbar-header">
+            <h1>Messaggi</h1>
             </div>
+            <div class="topbar-actions">
+            <button class="search-btn" type="button" aria-label="Cerca">
+                <span>🔍</span>
+            </button>
+            <button class="friends-btn" type="button">Aggiungi amici</button>
+            </div>
+        </header>
 
-            <div class="chat-card selected">
-                <div class="chat-left">
-                    <div class="avatar-wrapper">
-                        <img src="./img/profile2.webp" alt="Francesco Bianchi" class="avatar">
-                        <span class="status orange"></span>
+        <section class="chat-list-section">
+            <ul class="chat-list">
+            <li class="chat-card">
+                <a href="#" class="chat-link">
+                <div class="avatar-wrapper online">
+                    <img src="img/profile1.webp" alt="Giuseppe Rossi">
+                </div>
+                <div class="chat-text">
+                    <div class="chat-row">
+                    <h2>Giuseppe Rossi</h2>
+                    <span class="chat-time">2min</span>
                     </div>
+                    <p>ciao! tutto bene?</p>
+                </div>
+                </a>
+            </li>
 
-                <div class="chat-info">
-                    <h3>Francesco Bianchi</h3>
+            <li class="chat-card active">
+                <a href="#" class="chat-link">
+                <div class="avatar-wrapper away">
+                    <img src="img/profile2.webp" alt="Francesco Bianchi">
+                </div>
+                <div class="chat-text">
+                    <div class="chat-row">
+                    <h2>Francesco Bianchi</h2>
+                    <span class="chat-time">5min</span>
+                    </div>
                     <p><strong>Tu:</strong> perfetto, grazie!</p>
                 </div>
+                </a>
+            </li>
+
+            <li class="chat-card">
+                <a href="#" class="chat-link">
+                <div class="avatar-wrapper away">
+                    <img src="img/profile8.webp" alt="Giulio Moretti">
                 </div>
-
-                <span class="time">5min</span>
-            </div>
-
-            <div class="chat-card">
-                <div class="chat-left">
-                    <div class="avatar-wrapper">
-                        <img src="./img/profile12.webp" alt="Giulio Moretti" class="avatar">
-                        <span class="status orange"></span>
+                <div class="chat-text">
+                    <div class="chat-row">
+                    <h2>Giulio Moretti</h2>
+                    <span class="chat-time">8min</span>
                     </div>
-
-                <div class="chat-info">
-                    <h3>Giulio Moretti</h3>
                     <p><strong>Tu:</strong> ottimo lavoro!</p>
                 </div>
+                </a>
+            </li>
+
+            <li class="chat-card">
+                <a href="#" class="chat-link">
+                <div class="avatar-wrapper online">
+                    <img src="img/profile3.webp" alt="Lucia Ferrari">
                 </div>
-
-                <span class="time">8min</span>
-            </div>
-
-            <div class="chat-card">
-                <div class="chat-left">
-                    <div class="avatar-wrapper">
-                        <img src="./img/profile3.webp" alt="Lucia Ferrari" class="avatar">
-                        <span class="status green"></span>
+                <div class="chat-text">
+                    <div class="chat-row">
+                    <h2>Lucia Ferrari</h2>
+                    <span class="chat-time">12min</span>
                     </div>
-
-                <div class="chat-info">
-                    <h3>Lucia Ferrari</h3>
                     <p>grazie mille per tutto</p>
                 </div>
+                </a>
+            </li>
+
+            <li class="chat-card">
+                <a href="#" class="chat-link">
+                <div class="avatar-wrapper offline">
+                    <img src="img/profile10.webp" alt="Stefano Romano">
                 </div>
-
-                <span class="time">12min</span>
-            </div>
-
-            <div class="chat-card">
-                <div class="chat-left">
-                    <div class="avatar-wrapper">
-                        <img src="./img/profile4.webp" alt="Stefano Romano" class="avatar">
-                        <span class="status red"></span>
+                <div class="chat-text">
+                    <div class="chat-row">
+                    <h2>Stefano Romano</h2>
+                    <span class="chat-time">18min</span>
                     </div>
-
-                <div class="chat-info">
-                    <h3>Stefano Romano</h3>
                     <p><strong>Tu:</strong> ci sentiamo dopo</p>
                 </div>
+                </a>
+            </li>
+
+            <li class="chat-card">
+                <a href="#" class="chat-link">
+                <div class="avatar-wrapper away">
+                    <img src="img/profile5.webp" alt="Alessandra Conti">
                 </div>
-
-                <span class="time">18min</span>
-            </div>
-
-            <div class="chat-card">
-                <div class="chat-left">
-                    <div class="avatar-wrapper">
-                        <img src="./img/profile5.webp" alt="Alessandra Conti" class="avatar">
-                        <span class="status orange"></span>
+                <div class="chat-text">
+                    <div class="chat-row">
+                    <h2>Alessandra Conti</h2>
+                    <span class="chat-time">25min</span>
                     </div>
-
-                <div class="chat-info">
-                    <h3>Alessandra Conti</h3>
                     <p>quando hai tempo chiamami</p>
                 </div>
+                </a>
+            </li>
+
+            <li class="chat-card">
+                <a href="#" class="chat-link">
+                <div class="avatar-wrapper online">
+                    <img src="img/profile6.webp" alt="Elena Martini">
                 </div>
-
-                <span class="time">25min</span>
-            </div>
-
-            <div class="chat-card">
-                <div class="chat-left">
-                    <div class="avatar-wrapper">
-                        <img src="./img/profile6.webp" alt="Elena Martini" class="avatar">
-                        <span class="status green"></span>
+                <div class="chat-text">
+                    <div class="chat-row">
+                    <h2>Elena Martini</h2>
+                    <span class="chat-time">45min</span>
                     </div>
-
-                <div class="chat-info">
-                    <h3>Elena Martini</h3>
-                    <p>Tu: hai visto il messaggio?</p>
+                    <p><strong>Tu:</strong> hai visto il messaggio?</p>
                 </div>
+                </a>
+            </li>
+
+            <li class="chat-card">
+                <a href="#" class="chat-link">
+                <div class="avatar-wrapper offline">
+                    <img src="img/profile7.webp" alt="Matteo Greco">
                 </div>
-
-                <span class="time">45min</span>
-            </div>
-
-            <div class="chat-card">
-                <div class="chat-left">
-                    <div class="avatar-wrapper">
-                        <img src="./img/profile7.webp" alt="Matteo Greco" class="avatar">
-                        <span class="status red"></span>
+                <div class="chat-text">
+                    <div class="chat-row">
+                    <h2>Matteo Greco</h2>
+                    <span class="chat-time">12min</span>
                     </div>
-
-                <div class="chat-info">
-                    <h3>Matteo Greco</h3>
                     <p>ho finito il progetto</p>
                 </div>
+                </a>
+            </li>
+
+            <li class="chat-card">
+                <a href="#" class="chat-link">
+                <div class="avatar-wrapper offline">
+                    <img src="img/profile9.webp" alt="Marta Cortina">
                 </div>
-
-                <span class="time">45min</span>
-            </div>
-
-            <div class="chat-card">
-                <div class="chat-left">
-                    <div class="avatar-wrapper">
-                        <img src="./img/profile8.webp" alt="Martina Cortina" class="avatar">
-                        <span class="status red"></span>
+                <div class="chat-text">
+                    <div class="chat-row">
+                    <h2>Marta Cortina</h2>
+                    <span class="chat-time">1h</span>
                     </div>
+                    <p><strong>Tu:</strong> lato nostro non ci sono problemi</p>
                 </div>
+                </a>
+            </li>
 
-                <div class="chat-info">
-                    <h3>Martina Cortina</h3>
-                    <p>Tu: lato nostro non ci sono problemi</p>
+            <li class="chat-card">
+                <a href="#" class="chat-link">
+                <div class="avatar-wrapper online">
+                    <img src="img/profile4.webp" alt="Samir Elia">
                 </div>
+                <div class="chat-text">
+                    <div class="chat-row">
+                    <h2>Samir Elia</h2>
+                    <span class="chat-time">2h</span>
+                    </div>
+                    <p>domani ti mando gli screen</p>
                 </div>
+                </a>
+            </li>
 
-                <span class="time">1h</span>
-            </div>
-        </main>
+            <li class="chat-card">
+                <a href="#" class="chat-link">
+                <div class="avatar-wrapper away">
+                    <img src="img/profile11.webp" alt="Sara De Luca">
+                </div>
+                <div class="chat-text">
+                    <div class="chat-row">
+                    <h2>Sara De Luca</h2>
+                    <span class="chat-time">3h</span>
+                    </div>
+                    <p>stasera ci sei?</p>
+                </div>
+                </a>
+            </li>
+
+            <li class="chat-card">
+                <a href="#" class="chat-link">
+                <div class="avatar-wrapper offline">
+                    <img src="img/profile12.webp" alt="Davide Neri">
+                </div>
+                <div class="chat-text">
+                    <div class="chat-row">
+                    <h2>Davide Neri</h2>
+                    <span class="chat-time">5h</span>
+                    </div>
+                    <p>aggiorniamoci più tardi</p>
+                </div>
+                </a>
+            </li>
+            </ul>
+        </section>
+
+        <button class="new-chat-btn" type="button" aria-label="Nuova chat">+</button>
 
         <!-- Footer -->
         <footer class="bottom-nav">
-            <a href="#" class="nav-item">
-                <span class="nav-icon">🏠</span>
-                <span>Pagina principale</span>
-            </a>
-
-            <a href="#" class="nav-item">
-                <span class="nav-icon">🔔</span>
-                <span>Notifiche</span>
-            </a>
-
-            <a href="#" class="nav-item">
-                <span class="nav-icon">👤</span>
-                <span>Tu</span>
-            </a>
+            <a href="#" class="bottom-link active">Pagina principale</a>
+            <a href="#" class="bottom-link">Notifiche</a>
+            <a href="#" class="bottom-link">Tu</a>
         </footer>
+        </main>
+
+        
+       
         </div>
     </div>
 </body>
