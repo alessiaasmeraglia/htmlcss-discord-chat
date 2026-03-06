@@ -7,6 +7,20 @@
 
 body {
   font-family: sans-serif;
+  color: white;
+}
+
+button {
+  background: transparent;
+  border: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 /*Contenitore generale*/
@@ -31,6 +45,32 @@ body {
 .topbar {
   height: 120px;
   background-color: #1c1d29;
+  padding: 20px 16px 12px;
+}
+
+.topbar h1 {
+  font-size: 2rem;
+  margin-bottom: 14px;
+}
+
+.topbar-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.search-btn {
+  width: 38px;
+  height: 38px;
+  background-color: #2b2e3b;
+  border-radius: 50%;
+}
+
+.add-friend-btn {
+  flex-grow: 1;
+  height: 38px;
+  background-color: #313543;
+  border-radius: 50%;
 }
 /*Lista chat*/
 .chat-list {
@@ -41,4 +81,19 @@ body {
 .bottom-nav {
   height: 70px;
   background-color: #2b2d3a;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.8rem;
+}
+
+.nav-icon {
+  font-size: 1.2rem;
 }
