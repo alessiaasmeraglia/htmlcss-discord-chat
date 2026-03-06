@@ -1,0 +1,44 @@
+/*Reset iniziale*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+/*Contenitore generale*/
+.app {
+  height: 100vh;
+  display: flex;
+}
+
+/*Sidebar*/
+.sidebar {
+  width: 80px;
+  background-color: #11131a;
+}
+
+/*Tutta la parte destra*/
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+/*Header*/
+.topbar {
+  height: 120px;
+  background-color: #1c1d29;
+}
+/*Lista chat*/
+.chat-list {
+  flex-grow: 1;
+  background-color: #202230;
+}
+/*Footer*/
+.bottom-nav {
+  height: 70px;
+  background-color: #2b2d3a;
+}
