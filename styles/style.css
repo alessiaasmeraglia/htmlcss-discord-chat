@@ -132,6 +132,20 @@ body {
     gap: 8px;
     font-size: 14px;
     cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Hover effetto rilievo */
+.add-friend-btn:hover {
+    background-color: #4a4f63;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+}
+
+/* Quando clicchi */
+.add-friend-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 /* Sezione chat */
@@ -300,12 +314,8 @@ body {
     transition: color 0.2s;
 }
 
-/* Hover */
-.nav-item:hover {
-    color: #8ea1ff;
-}
-
-/* Voce attiva */
+/* Hover e voce attiva*/
+.nav-item:hover, 
 .nav-item.active-nav {
     color: #8ea1ff;
 }
