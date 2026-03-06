@@ -98,6 +98,10 @@ ul {
   gap: 10px;
   border-radius: 16px;
   padding: 12px 10px;
+  margin-bottom: 6px;
+}
+.chat-card.selected {
+  background-color: #2b2e3b;
 }
 
 .chat-left {
