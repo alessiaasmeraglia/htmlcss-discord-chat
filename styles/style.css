@@ -1,360 +1,303 @@
-/*Stile generale*/
-
-:root {
-  --bg-main: #181a24;
-  --bg-panel: #1f2230;
-  --bg-panel-light: #2a2e3c;
-  --bg-hover: #303544;
-  --bg-footer: #2b2d3a;
-  --bg-search: #2e3240;
-  --text-main: #ffffff;
-  --text-soft: #a6a9ba;
-  --text-muted: #8e93a8;
-  --accent: #5865f2;
-  --online: #39c06b;
-  --away: #f0b232;
-  --offline: #ed4f5f;
-  --sidebar-width: 82px;
-  --footer-height: 78px;
-}
-/*Reset iniziale*/
+/* Reset base */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-img {
-  display: block;
-  max-width: 100%;
-}
-
-button,
-a {
-  font: inherit;
-}
-
+/* Corpo pagina */
 body {
-  min-height: 100vh;
-  font-family: 'Inter', sans-serif;
-  background: #0e1018;
-  color: var(--text-main);
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #11121a;
+    color: white;
 }
 
-/*Contenitore generale*/
+/* Contenitore generale */
 .app {
-  display: flex;
-  min-height: 100vh;
-  background: linear-gradient(180deg, #1b1d29 0%, #181a24 100%);
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
 }
 
-/*Sidebar*/
+/* Sidebar sinistra */
 .sidebar {
-  width: var(--sidebar-width);
-  background: #0d0f17;
-  padding: 16px 0px;
-  flex-shrink: 0;
+    width: 80px;
+    background-color: #0b0d14;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 0;
 }
 
-.server-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 18px;
+/* Singolo server */
+.server {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.2s;
 }
 
-.server-item {
-  position: relative;
+/* Immagine dentro il server */
+.server img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
-.server-item::before {
-  content: '';
-  position: absolute;
-  left: -13px;
-  top: 50%;
-  width: 4px;
-  height: 0;
-  border-radius: 999px;
-  background: #fff;
-  transform: translateY(-50%);
-  transition: height 0.2s ease;
+/* Hover server */
+.server:hover {
+    transform: scale(1.08);
 }
 
-.server-item.current::before,
-.server-item:hover::before {
-  height: 34px;
+/* Barretta laterale server attivo */
+.server.active::before,
+.server:hover::before {
+    content: "";
+    position: absolute;
+    left: -12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 26px;
+    background-color: white;
+    border-radius: 10px;
 }
 
-.server-link {
-  width: 54px;
-  height: 54px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 18px;
-  overflow: hidden;
-  transition: transform 0.2s ease, border-radius 0.2s ease;
-}
-
-.server-link:hover {
-  transform: scale(1.08);
-  border-radius: 16px;
-}
-
-.server-link img {
-  width: 54px;
-  height: 54px;
-  object-fit: cover;
-}
-
-
-/*Tutta la parte destra*/
+/* Parte destra */
 .main-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, #161823 0%, #11131d 100%);
+    min-width: 0;
+    position: relative;
 }
 
-/*Header*/
+/* Header */
 .topbar {
-  padding: 26px 20px 18px;
+    padding: 24px 22px 18px;
 }
 
-.topbar-header h1 {
-  font-size: 2rem;
-  font-weight: 800;
-  margin-bottom: 14px;
+/* Titolo */
+.topbar h1 {
+    font-size: 26px;
+    margin-bottom: 14px;
 }
 
+/* Azioni header */
 .topbar-actions {
-  display: flex;
-  gap: 12px;
-  align-items: center;
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
-.search-btn,
-.friends-btn {
-  border: 0;
-  color: var(--text-main);
-  background: var(--bg-search);
-}
-
+/* Bottone ricerca */
 .search-btn {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  font-size: 1rem;
-  cursor: pointer;
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 50%;
+    background-color: #2e3140;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
 }
 
-.friends-btn {
-  flex: 1;
-  min-height: 42px;
-  border-radius: 14px;
-  font-weight: 500;
-  cursor: pointer;
+/* Bottone aggiungi amici */
+.add-friend-btn {
+    flex: 1;
+    height: 38px;
+    border: none;
+    border-radius: 20px;
+    background-color: #3a3e4d;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 14px;
+    cursor: pointer;
 }
 
-/*Lista chat*/
+/* Sezione chat */
 .chat-list-section {
-  flex: 1;
-  overflow-y: auto;
-  padding: 0 12px 110px 14px;
-  scrollbar-width: thin;
-  scrollbar-color: #424759 transparent;
+    flex: 1;
+    overflow-y: auto;
+    padding: 0 10px 20px 10px;
 }
 
+/* Scrollbar */
 .chat-list-section::-webkit-scrollbar {
-  width: 6px;
+    width: 6px;
 }
 
 .chat-list-section::-webkit-scrollbar-thumb {
-  background: #424759;
-  border-radius: 999px;
+    background-color: #3a3e4d;
+    border-radius: 20px;
 }
 
-.chat-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+/* Singola chat */
+.chat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 14px 12px;
+    border-radius: 18px;
+    margin-bottom: 8px;
+    transition: background-color 0.2s;
+    cursor: pointer;
 }
 
-.chat-card {
-  border-radius: 18px;
-  transition: background-color 0.2s ease;
+/* Hover chat */
+.chat-item:hover {
+    background-color: #2a2d38;
 }
 
-.chat-card.active,
-.chat-card:hover {
-  background: var(--bg-panel-light);
+/* Chat selezionata */
+.active-chat {
+    background-color: #242633;
 }
 
-.chat-link {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 12px 10px;
-  color: inherit;
-  text-decoration: none;
+/* Parte sinistra della chat */
+.chat-left {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    min-width: 0;
 }
 
-
-/* Avatar e stato */
+/* Wrapper avatar */
 .avatar-wrapper {
-  position: relative;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  flex-shrink: 0;
+    position: relative;
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
 }
 
-.avatar-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
+/* Avatar */
+.avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
 }
 
-.avatar-wrapper::after {
-  content: '';
-  position: absolute;
-  right: 1px;
-  bottom: 2px;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  border: 3px solid var(--bg-main);
+/* Pallino stato */
+.status {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    position: absolute;
+    right: -2px;
+    bottom: -1px;
+    border: 2px solid #1b1d28;
 }
 
-.avatar-wrapper.online::after {
-  background: var(--online);
+/* Colori stato */
+.status-red {
+    background-color: #ff4d5a;
 }
 
-.avatar-wrapper.away::after {
-  background: var(--away);
+.status-yellow {
+    background-color: #f1b32b;
 }
 
-.avatar-wrapper.offline::after {
-  background: var(--offline);
+.status-green {
+    background-color: #3bb273;
 }
 
+/* Testo chat */
 .chat-text {
-  min-width: 0;
-  flex: 1;
+    min-width: 0;
 }
 
-.chat-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 10px;
-  margin-bottom: 4px;
+/* Nome utente */
+.chat-text h3 {
+    font-size: 18px;
+    color: #7c8297;
+    margin-bottom: 4px;
 }
 
-.chat-row h2 {
-  font-size: 1.05rem;
-  font-weight: 700;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.chat-time {
-  flex-shrink: 0;
-  font-size: 0.95rem;
-  color: var(--text-soft);
-}
-
+/* Messaggio */
 .chat-text p {
-  color: var(--text-muted);
-  font-size: 1rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+    font-size: 14px;
+    color: #8d92a4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.chat-text strong {
-  color: #f0f2f8;
-  font-weight: 500;
+/* Orario */
+.chat-time {
+    font-size: 14px;
+    color: #8d92a4;
+    flex-shrink: 0;
+    padding-top: 4px;
 }
 
-/*Footer*/
-.bottom-nav {
-  height: var(--footer-height);
-  background: var(--bg-footer);
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  padding: 0 8px;
-  flex-shrink: 0;
-}
-
-.bottom-link {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  color: white;
-  text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 700;
-  text-align: center;
-}
-
-.bottom-link i {
-  font-size: 20px;
-}
-
-.bottom-link.active {
-  color: #fff;
-}
-
+/* Bottone nuova chat */
 .new-chat-btn {
-  position: fixed;
-  right: 18px;
-  bottom: 96px;
-  width: 58px;
-  height: 58px;
-  border: 0;
-  border-radius: 50%;
-  background: var(--accent);
-  color: #fff;
-  font-size: 2rem;
-  line-height: 1;
-  cursor: pointer;
-  box-shadow: 0 10px 24px rgba(88, 101, 242, 0.35);
+    position: fixed;
+    right: 18px;
+    bottom: 95px;
+    width: 54px;
+    height: 54px;
+    border: none;
+    border-radius: 50%;
+    background-color: #5865f2;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+    z-index: 20;
 }
 
-.nav-profile {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  object-fit: cover;
+/* Footer in basso */
+.bottom-nav {
+    height: 78px;
+    background-color: #2b2d39;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-shrink: 0;
 }
 
-
-
-@media (max-width: 420px) {
-  .topbar {
-    padding-inline: 16px;
-  }
-
-  .chat-list-section {
-    padding-inline: 10px 8px;
-  }
-
-  .chat-row h2 {
-    font-size: 1rem;
-  }
-
-  .chat-time,
-  .chat-text p,
-  .bottom-link {
-    font-size: 0.88rem;
-  }
+/* Link footer */
+.nav-item {
+    flex: 1;
+    height: 100%;
+    text-decoration: none;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-size: 13px;
 }
 
+/* Icone footer */
+.nav-item i {
+    font-size: 20px;
+}
+
+/* Avatar footer */
+.nav-avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Link footer attivo */
+.active-nav {
+    font-weight: bold;
+}
