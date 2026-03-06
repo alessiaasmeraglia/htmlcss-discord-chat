@@ -23,6 +23,16 @@ a {
   text-decoration: none;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+
 /*Contenitore generale*/
 .app {
   height: 100vh;
@@ -33,7 +43,40 @@ a {
 .sidebar {
   width: 80px;
   background-color: #11131a;
+  padding: 16px 8px;
 }
+
+.server-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.server-item {
+  width: 48px;
+  height: 48px;
+  background-color: #2b2e3b;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.server-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.server-item:hover {
+  transform: scale(1.08);
+}
+
+.server-item.active {
+  outline: 2px solid white;
+}
+
 
 /*Tutta la parte destra*/
 .main-content {
