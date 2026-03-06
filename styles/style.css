@@ -189,7 +189,8 @@ body {
 }
 
 .chat-text.active-chat h3,
-.chat-text.active-chat p {
+.chat-text.active-chat p,
+.chat-time.active-chat {
     color: white;
 }
 
